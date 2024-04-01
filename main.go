@@ -8,8 +8,6 @@ import (
 	"net/http"
 	"os"
 	"time"
-
-	"github.com/joho/godotenv"
 )
 
 type RateLimitResponse struct {
@@ -72,10 +70,6 @@ func makeRequest(client *http.Client, url string) (*http.Response, error) {
 }
 
 func setupDotenv() {
-	if err := godotenv.Load(); err != nil {
-		log.Fatalln("Failed to load env file")
-	}
-
 	AUTHORIZATION = os.Getenv("AUTHORIZATION")
 	if AUTHORIZATION == "" {
 		log.Fatalln("Missing env property: \"AUTHORIZATION\"")
