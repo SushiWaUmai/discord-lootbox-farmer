@@ -13,4 +13,4 @@ WORKDIR /app/
 
 COPY --from=builder /app/discord-lootbox-farmer .
 
-CMD ["discord-lootbox-farmer"]
+CMD ["./discord-lootbox-farmer"]
