@@ -22,7 +22,7 @@ var (
 )
 
 func main() {
-	setupDotenv()
+	loadEnv()
 
 	client := &http.Client{}
 	url := "https://discord.com/api/v9/users/@me/lootboxes/open"
@@ -69,7 +69,7 @@ func makeRequest(client *http.Client, url string) (*http.Response, error) {
 	return resp, nil
 }
 
-func setupDotenv() {
+func loadEnv() {
 	AUTHORIZATION = os.Getenv("AUTHORIZATION")
 	if AUTHORIZATION == "" {
 		log.Fatalln("Missing env property: \"AUTHORIZATION\"")
