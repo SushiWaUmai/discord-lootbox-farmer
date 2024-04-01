@@ -1,0 +1,7 @@
+version: "3"
+services:
+  discord-lootbox-farmer:
+    container_name: discord-lootbox-farmer
+    build: .
+    env_file:
+      .env
